@@ -16,6 +16,15 @@
     				<!--Card content-->
     				<div class="card-body">
     					<img src="http://via.placeholder.com/500x400" class="img img-responsive">
+                        <?php //print_r($arr);
+
+    foreach ($arr->result() as $row)
+    {
+        print $row->name;
+        print $row->pass;
+        print md5($row->pass);
+    }
+    ?>
     				</div>
     			</div>
 
@@ -44,24 +53,24 @@
     					<!-- Form contact -->
     					<p><?php 
 	    					//menampilkan username dari controller Login
-	    					print $username ?></p>
-    					<p><?php 
+                          print $this->session->userdata('name') ?></p>
+                          <p><?php 
     						//menampilkan password dari controller Login
-    						print $password ?></p>
-    					<p><?php 
+                              print $password ?></p>
+                              <p><?php 
     						//enkripsi safe url
-    						print str_replace(array("=","+","/"), array("-","_","~"), $password) ?></p>
-    					<p><?php 
+                                  //print str_replace(array("=","+","/"), array("-","_","~"), $password) ?></p>
+                                  <p><?php 
     						//dekrip password
-    						print $this->encryption->decrypt($password) ?></p>
-    					
-    				</div>
-    				
-    			</div>
-    			
-    		</div>
-    		<!--Grid column-->		
-    	</div>
-    </div>
-    
+                                      //print $this->encrypt->decode($password,'hallodunia') ?></p>
+
+                                  </div>
+
+                              </div>
+
+                          </div>
+                          <!--Grid column-->		
+                      </div>
+                  </div>
+
     <!-- /Start your project here-->

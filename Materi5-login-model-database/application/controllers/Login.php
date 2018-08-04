@@ -6,27 +6,26 @@ class Login extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->library('encryption');
+
+		$this->load->library('session');
+		$this->load->model('Mlogin');
+
 
 	}
 
 	public function index()
 	{
-		/*enkripsi dan dekrip*/
-		// $key will be assigned a 16-byte (128-bit) random key
-		$key = $this->encryption->create_key(32);
-		$this->encryption->initialize(
-			array(
-				'key' => $key,
-				'salt' => "hallodunia",
-				)
-			);
-
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
+
+		$arr=$this->Mlogin->getUser($username,md5($password));
+
+		$password = md5($password);
+		
 		$data = array(
 			'username' => $username,
-			'password' =>  $this->encryption->encrypt($password)
+			'password' =>  $password,
+			'arr' => $arr
 			);
 
 		$this->load->view('header',$data);
