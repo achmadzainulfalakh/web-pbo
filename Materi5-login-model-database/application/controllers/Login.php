@@ -15,6 +15,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
+
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
 
@@ -25,12 +26,20 @@ class Login extends CI_Controller {
 		$data = array(
 			'username' => $username,
 			'password' =>  $password,
+			'sesi' =>$this->session->userdata('name'),
 			'arr' => $arr
 			);
-
 		$this->load->view('header',$data);
 		$this->load->view('vlogin');
 		$this->load->view('footer');
+		if($this->Mlogin->username()){
+			header("Location:http://localhost/web-pbo/Materi5-login-model-database/");
+		} 
 
 	}
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		header("Location:http://localhost/web-pbo/Materi5-login-model-database/index.php/login/logout");
+		
 }

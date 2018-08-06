@@ -20,9 +20,9 @@
 
     foreach ($arr->result() as $row)
     {
-        print $row->name;
-        print $row->pass;
-        print md5($row->pass);
+        print $row->name."<br />";
+        print $row->pass."<br />";
+        //print md5($row->pass)."<br />";
     }
     ?>
     				</div>
@@ -53,10 +53,11 @@
     					<!-- Form contact -->
     					<p><?php 
 	    					//menampilkan username dari controller Login
-                          print $this->session->userdata('name') ?></p>
+                          print $this->session->userdata('name') . "<br/>";
+                          print $this->session->userdata('pass') ?></p>
                           <p><?php 
     						//menampilkan password dari controller Login
-                              print $password ?></p>
+                              //print $password ?></p>
                               <p><?php 
     						//enkripsi safe url
                                   //print str_replace(array("=","+","/"), array("-","_","~"), $password) ?></p>
