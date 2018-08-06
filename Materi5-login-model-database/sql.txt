@@ -6,3 +6,11 @@ create table `users` (
 `pass` varchar(500) not null,
 `level` varchar(200) not null
 );
+
+insert into users values(
+null,'admin','81dc9bdb52d04dc20036dbd8313ed055','administrator'
+);
+
+catatan: 
+username: admin
+password: 1234
