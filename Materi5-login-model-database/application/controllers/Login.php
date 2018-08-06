@@ -40,6 +40,6 @@ class Login extends CI_Controller {
 	public function logout()
 	{
 		$this->session->sess_destroy();
-		header("Location:http://localhost/web-pbo/Materi5-login-model-database/index.php/login/logout");
-		
+		header("Location:http://localhost/web-pbo/Materi5-login-model-database/index.php/login");
+	}
 }
