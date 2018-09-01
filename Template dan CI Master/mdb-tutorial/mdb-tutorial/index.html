@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Material Design Bootstrap</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body class="fixed-sn light-blue-skin">
+
+<!--Main Navigation-->
+<header>
+
+  <!-- SideNav slide-out button -->
+  <!-- <a href="#" data-activates="slide-out" class="btn btn-primary p-3 button-collapse"><i class="fa fa-bars"></i></a> -->
+
+  <!-- Sidebar navigation -->
+  <div id="slide-out" class="side-nav fixed">
+    <ul class="custom-scrollbar">
+      <!-- Logo -->
+      <li>
+        <div class="logo-wrapper waves-light">
+          <a href="#"><img src="https://mdbootstrap.com/img/logo/mdb-transparent.png" class="img-fluid flex-center"></a>
+        </div>
+      </li>
+      <!--/. Logo -->
+      <!--Social-->
+      <li>
+        <ul class="social">
+          <li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"></i></a></li>
+          <li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i></a></li>
+          <li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"></i></a></li>
+        </ul>
+      </li>
+      <!--/Social-->
+      <!--Search Form-->
+      <li>
+        <form class="search-form" role="search">
+          <div class="md-form my-0 waves-light">
+            <input type="text" class="form-control py-2" placeholder="Search">
+          </div>
+        </form>
+      </li>
+      <!--/.Search Form-->
+      <!-- Side navigation links -->
+      <li>
+        <ul class="collapsible collapsible-accordion">
+          <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-chevron-right"></i> Submit blog <i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#" class="waves-effect">Submit listing</a></li>
+                <li><a href="#" class="waves-effect">Registration form</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i> Instruction <i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#" class="waves-effect">For bloggers</a></li>
+                <li><a href="#" class="waves-effect">For authors</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About <i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#" class="waves-effect">Introduction</a></li>
+                <li><a href="#" class="waves-effect">Monthly meetings</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact me <i class="fa fa-angle-down rotate-icon"></i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#" class="waves-effect">FAQ</a></li>
+                <li><a href="#" class="waves-effect">Write a message</a></li>
+                <li><a href="#" class="waves-effect">FAQ</a></li>
+                <li><a href="#" class="waves-effect">Write a message</a></li>
+                <li><a href="#" class="waves-effect">FAQ</a></li>
+                <li><a href="#" class="waves-effect">Write a message</a></li>
+                <li><a href="#" class="waves-effect">FAQ</a></li>
+                <li><a href="#" class="waves-effect">Write a message</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <!--/. Side navigation links -->
+    </ul>
+  </div>
+  <!--/. Sidebar navigation -->
+  <!-- Initializations -->
+<script>
+  // SideNav Initialization
+  $(".button-collapse").sideNav();
+</script>
+
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main>
+
+</main>
+<!--Main layout-->
+
+<!--Footer-->
+<footer>
+
+</footer>
+<!--Footer-->
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <!-- Initializations -->
+    <script>
+        // SideNav Initialization
+        $(".button-collapse").sideNav();
+
+        // Material Select Initialization
+        $(document).ready(function () {
+            $('.mdb-select').material_select();
+        });
+
+        // Data Picker Initialization
+        $('.datepicker').pickadate();
+
+        // Tooltip Initialization
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+    <!-- Charts -->
+    <script>
+        // Minimalist chart
+        $(function () {
+            $('.min-chart#chart-sales').easyPieChart({
+                barColor: "#4caf50",
+                onStep: function (from, to, percent) {
+                    $(this.el).find('.percent').text(Math.round(percent));
+                }
+            });
+        });
+
+        // Main chart
+        var ctxL = document.getElementById("lineChart").getContext('2d');
+        var myLineChart = new Chart(ctxL, {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [{
+                    label: "My First dataset",
+                    fillColor: "#fff",
+                    backgroundColor: 'rgba(255, 255, 255, .3)',
+                    borderColor: 'rgba(255, 255, 255)',
+                    data: [0, 10, 5, 2, 20, 30, 45],
+                }]
+            },
+            options: {
+                legend: {
+                    labels: {
+                        fontColor: "#fff",
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            display: true,
+                            color: "rgba(255,255,255,.25)"
+                        },
+                        ticks: {
+                            fontColor: "#fff",
+                        },
+                    }],
+                    yAxes: [{
+                        display: true,
+                        gridLines: {
+                            display: true,
+                            color: "rgba(255,255,255,.25)"
+                        },
+                        ticks: {
+                            fontColor: "#fff",
+                        },
+                    }],
+                }
+            }
+        });
+    </script>
+
+    <!-- Alerts -->
+    <script>
+        $(function () {
+            $('#folder-1').click(function () {
+                toastr.error("Folder 1 has been clicked!", "Folder 1", {
+                    "positionClass": "toast-top-right",
+                });
+            });
+            $('#folder-2').click(function () {
+                // make it not dissappear
+                toastr.info("Folder 2 has been clicked!", "Folder 2", );
+            });
+            $('#folder-3').click(function () {
+                // make it not dissappear
+                toastr.info("Folder 3 has been clicked!", "Folder 3", );
+            });
+        });
+    </script>
+</body>
+
+</html>

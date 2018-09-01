@@ -1,0 +1,30 @@
+create database webpbo;
+
+create table `buku` (
+	`id` int(11) auto_increment primary key,
+	`jenis` varchar(200) not null,
+	`jml` int(11) not null,
+	`tglmasuk` timestamp not null
+);
+
+insert into buku values(
+		null,
+		'komik',
+		'5',
+		null
+	),(
+		null,
+		'kimia',
+		'30',
+		null
+	),(
+		null,
+		'biologi',
+		'15',
+		null
+	),(
+		null,
+		'komik',
+		'5',
+		null
+);
