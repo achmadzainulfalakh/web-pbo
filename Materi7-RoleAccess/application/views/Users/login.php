@@ -5,11 +5,25 @@
     				<div class="panel panel-default">
 
     					<div class="panel-body">
-    						<h2>User</h2>
-    						<form action="http://localhost/web-pbo/Materi7-RoleAccess/index.php/users" method="POST">
-    							<input type="text" name="name">
-    							<input type="text" name="pass">
-    							<input type="submit" value="kirim">
+    						<h2>Login</h2>
+    						<form class="form-horizontal" action="http://localhost/web-pbo/Materi7-RoleAccess/index.php/users" method="POST">
+    							<div class="form-group">
+    								<label class="control-label col-sm-2" for="name">Email:</label>
+    								<div class="col-sm-10">
+    									<input type="text" name="name" class="form-control" id="name" placeholder="Username" >
+    								</div>
+    							</div>
+    							<div class="form-group">
+    								<label class="control-label col-sm-2" for="pass">Password:</label>
+    								<div class="col-sm-10">          
+    									<input type="password" name="pass" class="form-control" id="pass" placeholder="Password" >
+    								</div>
+    							</div>
+    							<div class="form-group">        
+    								<div class="col-sm-offset-2 col-sm-10">
+    									<button type="submit" class="btn btn-default">Submit</button>
+    								</div>
+    							</div>
     						</form>
 
     					</div>
