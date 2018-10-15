@@ -1,30 +1,31 @@
 create database webpbo;
-
-create table `buku` (
-	`id` int(11) auto_increment primary key,
-	`jenis` varchar(200) not null,
-	`jml` int(11) not null,
-	`tglmasuk` timestamp not null
+create table `users` (
+`id` int(11) auto_increment primary key,
+`name` varchar(200) not null,
+`pass` varchar(500) not null,
+`level` varchar(200) not null
 );
 
-insert into buku values(
+insert into users values(
 		null,
-		'komik',
-		'5',
-		null
+		'admin',
+		'1234',
+		'administrator'
+	),(null,
+		'achmad',
+		'1234',
+		'admin'
 	),(
 		null,
-		'kimia',
-		'30',
-		null
-	),(
-		null,
-		'biologi',
-		'15',
-		null
-	),(
-		null,
-		'komik',
-		'5',
-		null
-);
+		'andi',
+		'1234',
+		'user'
+	);
+select * from users;
+select * from users where id='1';
+delete from users where id='1';
+update from users set nama='',pass='' where id='';
+
+catatan administrator: 
+username: admin
+password: 1234
