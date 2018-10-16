@@ -37,13 +37,33 @@ class Musers extends CI_model {
 		$query = $this->db->select('*')
 					->from('users')
 					->where(
-						array('name'=>'$name','pass'=>'$pass')
+						array('name'=>$name,'pass'=>$pass)
 					)
 					->get();
 		//return $query->result();
-					if ($query->result()) {
-						$this->session->set_userdata($query->result());
+					if ($query->result() !== null) {
+						foreach ($query->result() as $key) {
+							$this->session->set_userdata(
+								array(
+									"name"=>$key->name,
+									"pass"=>$key->pass,
+									"level"=>$key->level,
+								));
+						}
+						
 					}
+	}
+	public function getName()
+	{
+		return $this->session->userdata("name");
+	}
+	public function getPassword()
+	{
+		return $this->session->userdata("pass");
+	}
+	public function getLevel()
+	{
+		return $this->session->userdata("level");
 	}
 	
 }

@@ -1,5 +1,5 @@
     	<div class="container">
-    		<h1 style="padding-top:50px; ">Users</h1>
+    		<h1 style="padding-top:50px; ">Users | <?php print $name ?></h1>
     		<div class="row">
               <div class="col-md-6">
                <div class="panel panel-default">

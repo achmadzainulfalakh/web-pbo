@@ -3,12 +3,11 @@
     		<div class="row">
     			<div class="col-md-6">
     				<div class="panel panel-default">
-
     					<div class="panel-body">
     						<h2>Login</h2>
     						<form class="form-horizontal" action="http://localhost/web-pbo/Materi7-RoleAccess/index.php/users" method="POST">
     							<div class="form-group">
-    								<label class="control-label col-sm-2" for="name">Email:</label>
+    								<label class="control-label col-sm-2" for="name">Name:</label>
     								<div class="col-sm-10">
     									<input type="text" name="name" class="form-control" id="name" placeholder="Username" >
     								</div>
