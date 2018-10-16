@@ -22,12 +22,12 @@ class Users extends CI_Controller {
 			"level"=>$this->Musers->getLevel()
 		);*/
 		if ($this->Musers->getName()) {
-			redirect("http://localhost/web-pbo/Materi7-RoleAccess/index.php/users/users");
+			redirect("http://localhost/web-pbo/Materi7-RoleAccess/index.php/users/profile");
 		} 
 
 		$this->load->view('header');
 		$this->load->view('Users/nav');
-		$this->load->view('Users/login');
+		$this->load->view('Users/pagelogin');
 		$this->load->view('footer');
 	}
 	public function users()
@@ -43,23 +43,46 @@ class Users extends CI_Controller {
 		);
 		$this->load->view('header', $data);
 		$this->load->view('Users/nav');
-		$this->load->view('Users/main');
+		$this->load->view('Users/pageusers');
 		$this->load->view('footer');
 	}
 	public function profile()
 	{
-		$data = array("userdarimodel" => $this->Musers->getUsers());
+		if ($this->Musers->getName() == "") {
+			redirect("http://localhost/web-pbo/Materi7-RoleAccess/index.php/users");
+		} 
+		$data = array(
+			"userdarimodel" => $this->Musers->getUser($this->Musers->getId()),
+			"name"=>$this->Musers->getName(),
+			"pass"=>$this->Musers->getPassword(),
+			"level"=>$this->Musers->getLevel()
+		);
 		$this->load->view('header', $data);
 		$this->load->view('Users/nav');
-		$this->load->view('Users/main');
+		$this->load->view('Users/pageprofile');
 		$this->load->view('footer');
 	}
 	public function adduser()
 	{
-		$data = array("userdarimodel" => $this->Musers->getUsers());
+		if ($this->Musers->getName() == "") {
+			redirect("http://localhost/web-pbo/Materi7-RoleAccess/index.php/users");
+		} 
+		
+		if ($_POST) {
+			$name=$this->input->post("name");
+			$pass=$this->input->post("pass");
+			$level=$this->input->post("level");
+			$this->Musers->setUser($name,$pass,$level);
+		}
+		$data = array(
+			"userdarimodel" => $this->Musers->getUsers(),
+			"name"=>$this->Musers->getName(),
+			"pass"=>$this->Musers->getPassword(),
+			"level"=>$this->Musers->getLevel()
+		);
 		$this->load->view('header', $data);
 		$this->load->view('Users/nav');
-		$this->load->view('Users/main');
+		$this->load->view('Users/pageadduser');
 		$this->load->view('footer');
 	}
 	public function logout()
