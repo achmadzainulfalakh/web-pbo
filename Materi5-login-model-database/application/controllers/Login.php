@@ -4,8 +4,8 @@ class Users extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('users_model');
         $this->load->library('session');
+        $this->load->model('Mlogin');
     }
     public function view($page = 'login')
     {
