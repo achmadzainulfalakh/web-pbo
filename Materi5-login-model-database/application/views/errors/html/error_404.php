@@ -1,64 +1,66 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
+<? defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<title>404 Page Not Found</title>
-<style type="text/css">
-
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
-
-body {
-	background-color: #fff;
-	margin: 40px;
-	font: 13px/20px normal Helvetica, Arial, sans-serif;
-	color: #4F5155;
-}
-
-a {
-	color: #003399;
-	background-color: transparent;
-	font-weight: normal;
-}
-
-h1 {
-	color: #444;
-	background-color: transparent;
-	border-bottom: 1px solid #D0D0D0;
-	font-size: 19px;
-	font-weight: normal;
-	margin: 0 0 14px 0;
-	padding: 14px 15px 10px 15px;
-}
-
-code {
-	font-family: Consolas, Monaco, Courier New, Courier, monospace;
-	font-size: 12px;
-	background-color: #f9f9f9;
-	border: 1px solid #D0D0D0;
-	color: #002166;
-	display: block;
-	margin: 14px 0 14px 0;
-	padding: 12px 10px 12px 10px;
-}
-
-#container {
-	margin: 10px;
-	border: 1px solid #D0D0D0;
-	box-shadow: 0 0 8px #D0D0D0;
-}
-
-p {
-	margin: 12px 15px 12px 15px;
-}
-</style>
+	<style type="text/css">
+	.text {
+		fill: none;
+		stroke-width: 7;
+		stroke-linejoin: round;
+		stroke-dasharray: 70 330;
+		stroke-dashoffset: 0;
+		animation: stroke 6s infinite linear;
+	}
+	.text:nth-child(5n + 1) {
+		stroke: #007bff;
+		animation-delay: -1.2s;
+	}
+	.text:nth-child(5n + 2) {
+		stroke: #6610f2;
+		animation-delay: -2.4s;
+	}
+	.text:nth-child(5n + 3) {
+		stroke: #dc3545;
+		animation-delay: -3.6s;
+	}
+	.text:nth-child(5n + 4) {
+		stroke: #fd7e14;
+		animation-delay: -4.8s;
+	}
+	.text:nth-child(5n + 5) {
+		stroke: #28a745;
+		animation-delay: -6s;
+	}
+	@keyframes stroke {
+		100% {
+			stroke-dashoffset: -400;
+		}
+	}
+	body {
+		font: 11.5em/1 Open Sans, Arial, Tahoma;
+		background: #ccc;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	svg {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	*:selected{color: black;}
+	</style>
+	<title>PAGE NOT FOUND</title>
 </head>
 <body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+	<svg viewBox="0 0 2000 600">
+		<symbol id="s-text">
+			<text text-anchor="middle" x="50%" y="50%" dy=".35em">&lt;/ ERROR 404 &gt;</text>
+		</symbol>  
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text"></use>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text"></use>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text"></use>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text"></use>
+		<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#s-text" class="text"></use>
+	</svg>
 </body>
 </html>
